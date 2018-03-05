@@ -12,12 +12,12 @@
 <body>
     <header>
         <nav>
-            <form action = "post" class="header__form">
+            <form action = "MVC/model.php?user=bo&amp;pwd=jdjd" class="header__form">
                 <label for = "username">
-                    <input type = "text" required class = "header__input__username">
+                    <input type = "text" name="user" required class = "header__input__username">
                 </label>
                 <label for = "password">
-                    <input type = "password" required class = "header__input__password">
+                    <input type = "password" name="pwd" required class = "header__input__password">
                 </label>
                 <button type = submit>ok</button>
 
