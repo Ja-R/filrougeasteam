@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <form action = "MVC/model.php?user=bo&amp;pwd=jdjd" class="header__form">
+            <form action = "login.php" class="header__form" method="post">
                 <label for = "username">
                     <input type = "text" name="user" required class = "header__input__username">
                 </label>
