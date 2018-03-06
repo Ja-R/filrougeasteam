@@ -15,16 +15,46 @@ function dbConnect()
 
 }
 
-//
-function login()
-{
+// htmlspecialchars($comment['author']);
+
 
   $db = dbConnect();
-  if (!isset($_POST['user']) && (!isset($_POST['pwd']))) {
 
+  if (!isset($_GET['user']) && (!isset($_GET['pwd']))) {
+    echo "D-JAMAR";
   }
-  $req = $db->prepare('SELECT login, pass FROM utilisateurs WHERE login = :pseudo, pass = :pass');
+  else
+  {
+     $login = $_GET['user'];
+     $pwd = htmlspecialchars($_GET['pwd']);
+  }
+
+  $req = $db->prepare('SELECT login, password
+    FROM utilisateurs
+    WHERE login = :login, password = :password');
   $req->execute(array(
-      'login' => $login));
+      'login' => $login,
+      'password' => $pwd));
   $resultat = $req->fetch();
-}
+
+  // Comparaison du pass envoyé via le formulaire avec la base
+  $isPasswordCorrect = password_verify($pwd, $resultat['password']);
+
+  if (!$resultat)
+  {
+      echo 'Mauvais identifiant ou mot de passe !';
+  }
+  else
+  {
+      if ($isPasswordCorrect) {
+          // session_start();
+          // $_SESSION['id'] = $resultat['id'];
+          // $_SESSION['log'] = $login;
+          echo 'Vous êtes connecté !';
+      }
+      else {
+          echo 'Mauvais identifiant ou mot de passe !';
+      }
+  }
+
+//header('Location: header.php);
