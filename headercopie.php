@@ -46,9 +46,7 @@
                         <input type="password" name="pwd" placeholder=" Mot de passe" class="header__input__password">
                     </label>
 
-                    <button type="submit">OK
-
-                    </button>
+                    <button type="submit">OK</button>
 
                 </form>
             </div>

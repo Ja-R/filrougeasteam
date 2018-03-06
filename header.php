@@ -26,3 +26,57 @@
         <h1 class = "header__title">BLOG</h1>
     </header>
 <main>
+
+  <!-- DASHBOARD -->
+
+  <?php
+      //connection base de donnees
+      try
+      {
+        $bdd = new PDO('mysql:host=127.0.0.1;dbname=blogsuperlab;charset=utf8', 'root', 'user', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        //return $bdd;
+      }
+      catch (Exception $e)
+      {
+        die('Erreur : ' . $e->getMessage());
+      }
+
+      $req = $bdd->query('SELECT auteur, titre, catégorie, contenu,
+        DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
+         FROM articles
+         ORDER BY date_article DESC
+         LIMIT 0, 2');
+
+      // affichage
+      while ($donnees = $req->fetch())
+      {
+      ?>
+
+  <article>
+      <ul class="categorie-list">
+          <li class="categorie">
+            <?= $donnees['catégorie']; ?>
+          </li>
+      </ul>
+
+      <h2>
+        <?= $donnees['titre']; ?>
+      </h2>
+      <h3>
+        <?= $donnees['auteur']; ?>
+      </h3>
+      <time>
+        <?= $donnees['date_art_fr']; ?>
+      </time>
+      <p>
+        <?= $donnees['contenu']; ?>
+      </p>
+  </article>
+
+  <hr>
+
+  <?php
+  }
+  $req->closeCursor(); // Termine le traitement de la requête
+
+  ?>
