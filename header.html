@@ -7,30 +7,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog superLab</title>
     <link rel="stylesheet" type="text/css" href="assets/css/blog.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="assets/css/css/fontasesome.css">
+    <link rel="stylesheet" href="assets/css/css/fontawesome-all.css">
+
+
 </head>
 
 <body>
     <header>
         <nav>
-            <form action="post" class="header__form">
-                <label for="username">Compte</label>
-                <input type="text" name = "user"placeholder="ex : Admin" class="header__input__username">
-
-                <label for="password">Mot de passe</label>
-                <input type="password" name = "pwd" placeholder="ex : passpass123" class="header__input__password">
-
-                <button type="submit">OK</button>
-            </form>
-            <div class="header__btn-login hidden">
-                <i class="fas fa-user-secret"></i>
-                <span>Login</span>
+            <div class="header__btn-login">
+                <i class="far fa-lg fa-user-circle"></i>
             </div>
         </nav>
         <h1 class="header__title">BLOG</h1>
     </header>
     <main>
+        <div class="modal show-modal">
+            <div class="modal-content">
+                <div class="modal-upper">
+                    <div class="close-button">
+                        <i class="fas fa-times "></i>
+                    </div>
+                    <div class="modal-upper__icon">
+                        <i class="far fa-2x fa-lg fa-user-circle"></i>
+                    </div>
 
+                </div>
+
+                <form action="post" class="header__form ">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="user" placeholder=" Compte" class="header__input__username">
+                    </label>
+
+                    <label for="password">
+                        <i class="fas fa-key"></i>
+                        <input type="password" name="pwd" placeholder=" Mot de passe" class="header__input__password">
+                    </label>
+
+                    <button type="submit">OK
+
+                    </button>
+
+                </form>
+            </div>
+        </div>
+        <article>
+            <ul class="categorie-list">
+                <li class="categorie">Project</li>
+                <li class="categorie">News</li>
+            </ul>
+
+            <h2>Mon premier article</h2>
+            <time>28 Juin</time>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae explicabo quos magnam in odit esse, cum totam,
+                ullam rem doloribus qui nam ad at eos, soluta animi ex recusandae quas.</p>
+            <h3>Dolor sit animi recus esse nulla.</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil architecto esse nulla excepturi dolorem. Porro
+                tempore ab consequuntur similique. Qui.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quas temporibus rerum illo. Dolore pariatur,
+                accusantium repellendus sapiente in quibusdam animi. Exercitationem tenetur adipisci explicabo ab delectus
+                et molestiae iure? Cupiditate et deleniti provident voluptatum ab doloremque, consectetur nostrum totam eaque
+                id officiis nisi delectus.</p>
+
+        </article>
         <!-- A déplacer dans footer.php -->
     </main>
     <script src="assets/js/blog.js"></script>
