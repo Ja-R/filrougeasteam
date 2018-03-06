@@ -7,7 +7,8 @@
 //verification des identifiants
 if (!isset($_POST['user']) AND !isset($_POST['pwd'])){
   echo "D-JAMAR";
-}else{
+}else
+{
   $login =  htmlspecialchars($_POST['user']);
   $pwd = htmlspecialchars($_POST['pwd']);
   $pwdhash = password_hash($pwd, PASSWORD_DEFAULT);
@@ -48,7 +49,7 @@ else
         $_SESSION['pseudo'] = $login;
         echo 'Vous êtes connecté ' . $login . ' !';
         //echo 'Vous êtes connecté!' . $login . '<br> session id: ' . $_SESSION['id'] . '<br> pseudo' .$_SESSION['pseudo'] ;
-        header('Location: article.php');
+        header('Location: dashboard.php');
     }
     else {
         echo 'Mauvais mot de passe !';
