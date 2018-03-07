@@ -16,7 +16,6 @@ input[type="tel"],
 input[type="text"],
 input[type="time"],
 input[type="url"],
-input[type="week"],
 button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -89,6 +88,27 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  -webkit-box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+  -moz-box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1); 
+}
+.dashboard-btn{
+  text-decoration: none;
+  color:var(--white);
+  border:1px var(--white) solid;
+  padding:7px;
+  border-radius:4px;
+  margin-right:20px;
+}
+.dashboard-btn:hover{
+  background-color: var(--white);
+  color:var(--text);
+}
+.nav-dash{
+  display:flex;
+  justify-content: center;
+  align-items: center;  
+
 }
 .backSuperlab {
   padding: 20px;
@@ -152,7 +172,6 @@ nav {
 }
 .modal-content {
   position: absolute;
-  z-index: 100;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -65%);
@@ -277,7 +296,7 @@ nav {
 header {
   background: hsl(210, 100%, 56%) url("../img/ahoy.jpg") repeat center;
   background-blend-mode: lighten;
-  height: 150px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,4 +374,16 @@ ul.category-list {
 margin-bottom:30px;
 line-height:1.5;
 font-size:19px;
+}
+
+footer{
+  background-color: var(--main-color);
+  height:150px;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Roboto Slab';
+  font-weight:600;
+  font-size:29px;
 }

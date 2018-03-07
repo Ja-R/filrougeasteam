@@ -1,0 +1,33 @@
+html,body{
+    width:100%;
+}
+.modif-article{
+    border:1px solid black;
+    width:100%;
+    padding:25px;
+}
+.modif-article-form{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+
+}
+.modif-label{
+    border:1px solid rgba(0, 0, 0, 0.452);
+    margin-bottom:15px;
+    padding:4px;
+}
+.modif-input{
+    width:80%;
+}
+
+.modif__categorie-list{
+    display:flex;
+    
+}
+.modif-chekbox{
+    padding:15px;
+    margin: 10px;
+    border:1px solid black;
+
+}
