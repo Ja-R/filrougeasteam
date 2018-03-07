@@ -13,7 +13,9 @@ catch (Exception $e)
   die('Erreur : ' . $e->getMessage());
 }
 
-$supprimeligne = $bdd -> prepare("DELETE FROM articles WHERE id=?");
+$supprimeligne = $bdd -> prepare("DELETE FROM articles WHERE id_article=?");
 $supprimeligne -> execute(array($iddelete));
+
+$supprimeligne->closeCursor();
 
 header('Location: dashboard.php');

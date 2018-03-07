@@ -23,12 +23,24 @@
     <h2>ajouter un article</h2>
 
 <form action="ajout.php?" method="post">
-  <input type="text" name="titre">
-  <input type="text" name="categorie">
-  <input type="text" name="contenu">
-  <button type="submit">OK</button>
+  <input type="text" name="titre" placeholder="Votre titre">
+  <!-- <input type="text" name="categorie" placeholder="Choissiez une categorie"> -->
+  <!-- <input type="text" name="contenu" placeholder="Votre texte"> -->
+  <br> <textarea name="contenu" style="width:450px; height:200px" placeholder="Votre texte"></textarea>
+  <button type="submit">Validez</button>
 </form>
 
+<form  action="categorie.php" method="post">
+  <input type="checkbox" name="cat[]" value="cat1">
+  <label>cat1</label>
+  <input type="checkbox" name="cat[]" value="cat2">
+  <label>cat2</label>
+  <input type="checkbox" name="cat[]" value="cat3">
+  <label>cat3</label>
+  <input type="text" name="ajout_cat" placeholder="Ajoutez votre catégorie">
+  <input type="submit">
+</form>
+<hr>
     <?php
         //connection base de donnees
         try
@@ -41,7 +53,7 @@
           die('Erreur : ' . $e->getMessage());
         }
 
-        $req = $bdd->query('SELECT id, auteur, titre, catégorie, contenu,
+        $req = $bdd->query('SELECT id_article, auteur, titre, catégorie, contenu,
           DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
            FROM articles
            ORDER BY date_article DESC
@@ -63,7 +75,7 @@
           <?= $donnees['titre']; ?>
         </h2>
         <h3>
-          <?= $donnees['auteur']; ?> identifiant <?= $donnees['id']; ?>
+          <?= $donnees['auteur']; ?> identifiant <?= $donnees['id_article']; ?>
         </h3>
         <time>
           <?= $donnees['date_art_fr']; ?>
@@ -72,9 +84,9 @@
           <?= $donnees['contenu']; ?>
         </p>
 
-        <a href="delete.php?identifiant=<?php echo $donnees['id'];?>">supprimer</a>
+        <a href="delete.php?identifiant=<?php echo $donnees['id_article'];?>">supprimer</a>
         <br>
-        <a href="modification.php?identifiant=<?php echo $donnees['id'];?>">modifier</a>
+        <a href="modification.php?identifiant=<?php echo $donnees['id_article'];?>">modifier</a>
 
     </article>
 

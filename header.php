@@ -80,3 +80,18 @@
   $req->closeCursor(); // Termine le traitement de la requête
 
   ?>
+
+pour modiffff
+
+$modification = $bdd->prepare('UPDATE articles SET titre = :titre, catégorie = :categorie, contenu = :contenu, date_article = NOW()
+  WHERE id = :identif');
+
+// ajouter input pour les modifs
+$modification->execute(array(
+  'titre' => $titre,
+  'categorie' => $categorie,
+  'contenu' => $contenu,
+  'identif' => $idmodif
+));
+
+  <?php header('Location: dashboard.php'); ?>
