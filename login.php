@@ -27,7 +27,7 @@ catch (Exception $e)
 }
 
 //  Récupération de l'utilisateur et de son pass hashé
-$req = $bdd->prepare('SELECT id, login, password FROM utilisateurs WHERE login = :pseudo');
+$req = $bdd->prepare('SELECT id_user, login, password FROM utilisateurs WHERE login = :pseudo');
 $req->execute(array(
     'pseudo' => $login));
 $resultat = $req->fetch();
@@ -45,7 +45,7 @@ else
 {
     if ($isPasswordCorrect) {
         session_start();
-        $_SESSION['id'] = $resultat['id'];
+        $_SESSION['id'] = $resultat['id_user'];
         $_SESSION['pseudo'] = $login;
         echo 'Vous êtes connecté ' . $login . ' !';
         //echo 'Vous êtes connecté!' . $login . '<br> session id: ' . $_SESSION['id'] . '<br> pseudo' .$_SESSION['pseudo'] ;

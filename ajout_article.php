@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if (empty($_POST['titre']) && empty($_POST['categorie']) && empty($_POST['contenu'])) {
-echo "Veuillez remplir les champs s'il vous plait";
+if (empty($_POST['titre']) && empty($_POST['categorie']) && empty($_POST['contenu']) && empty($_POST['cat']))
+{
+  echo "Veuillez remplir tous les champs s'il vous plait";
 }else{
   try
   {
@@ -18,7 +19,8 @@ echo "Veuillez remplir les champs s'il vous plait";
   $categorie = htmlspecialchars($_POST['categorie']);
   $contenu = htmlspecialchars($_POST['contenu']);
 
-  $req = $bdd->prepare('INSERT INTO articles(auteur, titre, catégorie, contenu, date_article) VALUES(:auteur, :titre, :categorie, :contenu, NOW())');
+  $req = $bdd->prepare('INSERT INTO articles(auteur, titre, catégorie, contenu, date_article)
+  VALUES(:auteur, :titre, :categorie, :contenu, NOW())');
   $req->execute(array(
     'auteur' => $auteur,
     'titre' => $titre,

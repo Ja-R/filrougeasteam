@@ -9,6 +9,18 @@
   // {
   // 	echo 'Les variables ne sont pas déclarées.';
   // }
+
+  //connection base de donnees
+  try
+  {
+    $bdd = new PDO('mysql:host=127.0.0.1;dbname=blogsuperlab;charset=utf8', 'root', 'user', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    //return $bdd;
+  }
+  catch (Exception $e)
+  {
+    die('Erreur : ' . $e->getMessage());
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -20,44 +32,35 @@
   <body>
 
 
-    <h2>ajouter un article</h2>
+options: <a href="ajouter_article.php">ajouter une article</a>
+<hr>
 
-<form action="ajout.php?" method="post">
-  <input type="text" name="titre" placeholder="Votre titre">
-  <!-- <input type="text" name="categorie" placeholder="Choissiez une categorie"> -->
-  <!-- <input type="text" name="contenu" placeholder="Votre texte"> -->
-  <br> <textarea name="contenu" style="width:450px; height:200px" placeholder="Votre texte"></textarea>
-  <button type="submit">Validez</button>
-</form>
+<p>Choix des catégories:</p><br>
 
-<form  action="categorie.php" method="post">
-  <input type="checkbox" name="cat[]" value="cat1">
-  <label>cat1</label>
-  <input type="checkbox" name="cat[]" value="cat2">
-  <label>cat2</label>
-  <input type="checkbox" name="cat[]" value="cat3">
-  <label>cat3</label>
-  <input type="text" name="ajout_cat" placeholder="Ajoutez votre catégorie">
-  <input type="submit">
-</form>
+<?php
+  $req_cat = $bdd->query('SELECT id_categorie, name_categorie
+     FROM categories');
+
+     while ($all_categories = $req_cat->fetch())
+     {
+     ?>
+     <a href="tri_categorie.php?idcat=<?= $all_categories['id_categorie'];?>"> <?= $all_categories['name_categorie']; ?> </a> <br>
+
+     <?php
+     }
+     $req_cat->closeCursor(); // Termine le traitement de la requête
+
+     ?>
+
 <hr>
     <?php
-        //connection base de donnees
-        try
-        {
-          $bdd = new PDO('mysql:host=127.0.0.1;dbname=blogsuperlab;charset=utf8', 'root', 'user', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-          //return $bdd;
-        }
-        catch (Exception $e)
-        {
-          die('Erreur : ' . $e->getMessage());
-        }
 
         $req = $bdd->query('SELECT id_article, auteur, titre, catégorie, contenu,
           DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
            FROM articles
            ORDER BY date_article DESC
-           LIMIT 0, 2');
+          --  LIMIT 0, 2
+           ');
 
         // affichage
         while ($donnees = $req->fetch())
