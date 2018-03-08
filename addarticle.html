@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/modif.css">
+    <title>ajout d'article</title>
+</head>
+
+<body>
+    <nav>
+        <a href='dashboard.html' class="backSuperlab connected">
+            <i class="fas fa-arrow-left"></i>
+            superDashboard.be
+        </a>
+        <div class="header__btn-login">
+            <i class="far fa-lg fa-user-circle"></i>
+            <p class="login-name">Admin</p>
+        </div>
+    </nav>
+    <main>
+
+        <article class="modif-article">
+            <form action="#" method="post" class="modif-article-form">
+                <div class="article-title-wrapper">
+                    <h2>Choisissez votre titre</h2>
+                    <label class="modif-title">
+                        <input type="text" id="title" value="Mon premier titre" class="modif-input">
+                    </label>
+                </div>
+                <div class="checkbox-wrap">
+                    <h2>Choisissez vos catégories</h2>
+                    <div class="control-group">
+                        <label class="control control--checkbox">News
+                            <input type="checkbox" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">Project
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">Animaux
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">Miel
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">Investisseur
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">PHP
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">JD
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--checkbox">Machin
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+
+                    </div>
+                    <div>
+                        <input type="textarea" class="article-textarea">
+                    </div>
+                </div>
+                <input type="submit" name="" class="submit-add-article">
+            </form>
+
+        </article>
+
+    </main>
+</body>
+
+</html>

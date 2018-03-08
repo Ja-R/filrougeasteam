@@ -45,6 +45,7 @@ button {
 /* END FORM RESET */
 
 :root {
+  --bg:#f0f3f7;
   --main-color: hsl(210, 100%, 56%);
   --second-color: rgb(233, 233, 233);
   --white: FloralWhite;
@@ -78,7 +79,7 @@ html {
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--bg);
 }
 /* NAV */
 nav {
@@ -92,13 +93,21 @@ nav {
   -moz-box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1); 
 }
+.header-nav-dash{
+  margin-bottom: 25px;
+  margin-top:25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 .dashboard-btn{
   text-decoration: none;
   color:var(--white);
-  border:1px var(--white) solid;
-  padding:7px;
-  border-radius:4px;
+  border-bottom:3px solid var(--white);
+  padding-top:7px;
   margin-right:20px;
+  font-weight:500;
+  transition:.3 ease;
 }
 .dashboard-btn:hover{
   background-color: var(--white);
@@ -107,8 +116,7 @@ nav {
 .nav-dash{
   display:flex;
   justify-content: center;
-  align-items: center;  
-
+  align-items: center;
 }
 .backSuperlab {
   padding: 20px;
@@ -366,10 +374,14 @@ ul.category-list {
   padding: 7px 11px;
   margin-right: 9px;
   border-radius: 4px;
-  border: 1px solid rgba(54, 54, 54, 0.568);
   cursor:pointer;
+  background-color: var(--white);
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.1);
 }
-
+.category:hover{
+  background-color: var(--text);
+  color:var(--white)
+}
 .article-p {
 margin-bottom:30px;
 line-height:1.5;
