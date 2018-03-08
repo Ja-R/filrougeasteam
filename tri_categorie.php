@@ -39,7 +39,7 @@
    while ($art_tries = $req->fetch())
    {
    ?>
-<h1>articles tries par categorie</h1><br>
+<h1>articles tries par categorie : <?= $art_tries['name_categorie']; ?></h1><br>
 <article>
    <ul class="categorie-list">
        <li class="categorie"> catégorie:
@@ -70,6 +70,6 @@
 
 <?php
 }
-$req->closeCursor(); // Termine le traitement de la requête
+$req->closeCursor();
 
 ?>
