@@ -41,7 +41,7 @@
     <main>
 
         <div class="nav-dash">
-            <a href="addcat.html" class="add-cat">
+            <a href="addcat.php" class="add-cat">
                 Ajouter catégorie
             </a>
             <a href="addarticle.php" class="add-article">
@@ -51,22 +51,26 @@
         <div class="dashboard-wrapper-cat">
             <h3>Trier par catégories</h3>
 
-            <?php
-              $req_cat = $bdd->query('SELECT id_categorie, name_categorie
-                 FROM categories');
-
-              while ($all_categories = $req_cat->fetch())
-              {
-            ?>
                 <ul class="list-cat">
+
+                  <?php
+                    $req_cat = $bdd->query('SELECT id_categorie, name_categorie
+                       FROM categories');
+
+                    while ($all_categories = $req_cat->fetch())
+                    {
+                  ?>
+
                     <li class="category">
                       <a href="filtre.php?idcat=<?= $all_categories['id_categorie'];?>"> <?= $all_categories['name_categorie']; ?> </a>
                     </li>
+
+                  <?php
+                  }
+                  $req_cat->closeCursor();
+                  ?>
+
                 </ul>
-            <?php
-            }
-            $req_cat->closeCursor();
-            ?>
 
         </div>
 
