@@ -32,50 +32,52 @@ body {
 .inputcat {
   padding: 7px;
   margin-right: 4px;
-    width:405px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  width: 405px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .submitcat {
-    border: none;
-    height:32px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.4);
-    background-color: var(--white);
-    cursor:pointer;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    padding:10px;
+  border: none;
+  height: 32px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  background-color: var(--white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
-.submitcat:hover{
-    background-color: var(--text);
-    color:var(--white);
+.submitcat:hover {
+  background-color: var(--text);
+  color: var(--white);
 }
-.submitcat:hover .submit-cat-input{
-    background-color: var(--text);
-    color:var(--white);
+.submitcat:hover .submit-cat-input {
+  background-color: var(--text);
+  color: var(--white);
 }
-.submitcat:hover .submit-cat-input{
-    background-color: none;
+.submitcat:hover .submit-cat-input {
+  background-color: none;
 }
 .submit-cat-input {
   background-color: var(--white);
   border-radius: 4px;
   border: none;
-  cursor:pointer;
-  margin-right:7px;
+  cursor: pointer;
+  margin-right: 7px;
 }
 .submit-add-article {
   border: none;
-  height:32px;
-  width:78px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.2);
-  background-color: var(--white);
-  cursor:pointer;
+  height: 32px;
+  width: 78px;
+  padding:10px;
+  margin-top: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: var(--red);
+  cursor: pointer;
 }
-.submit-add-article:hover{
-    background-color: var(--text);
-    color:var(--white);
+.submit-add-article:hover {
+  background-color: var(--text);
+  color: var(--white);
 }
 
 /* FIN AJOUT CATEGORIE */
@@ -90,22 +92,25 @@ body {
   display: flex;
   flex-direction: column;
 }
-.article-title-wrapper h2{
-margin-bottom: 10px;
+.article-title-wrapper h2 {
+  margin: 0 0 25px 0;
 }
 .modif-label {
   border: 1px solid rgba(0, 0, 0, 0.452);
   margin-bottom: 15px;
   padding: 4px;
 }
-.modif-title{
-    
+.modif-title input[type="text"] {
+  color: var(--text);
+  font-weight: 500;
+  padding-left: 12px;
 }
+
 .modif-input {
   width: 80%;
-  height:40px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.2);
-  color:var(--text);
+  height: 40px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: var(--red);
   margin-bottom: 10px;
 }
 
@@ -119,119 +124,131 @@ margin-bottom: 10px;
 }
 
 /* CHECKBOX  */
-.checkbox-wrap h1{
-    margin:25px 0;
+.checkbox-wrap h2 {
+  margin: 25px 0;
 }
 .control-group {
-    display: flex;
-    align-items:center;
-    flex-wrap:wrap;
-	width: 100%;
-	padding: 30px;
-	text-align: left;
-	vertical-align: top;
-	background: #fff;
-	box-shadow: 0 1px 4px rgba(0,0,0,.2);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px;
+  text-align: left;
+  vertical-align: top;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .control {
-	font-size: 18px;
-	position: relative;
-	display: block;
-	margin-bottom: 15px;
-	padding: 10px 30px 10px 40px;
-    cursor: pointer;
-    margin-right:10px;
-    margin-left:10px;
-    transition: .2s ease-out; 
-    box-shadow: 0 0px 3px rgba(0,0,0,.2);
+  font-size: 18px;
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px 30px 10px 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: 0.2s ease-out;
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
 }
-.control:hover{
-    box-shadow: 0 1px 7px rgba(0,0,0,.4);
-
+.control:hover {
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4);
 }
 .control input {
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 }
 
 .control__indicator {
-	position: absolute;
-	top: calc(50% - 10px);
-	left: 0;
-	width: 20px;
-	height: 20px;
-    background: #e6e6e6;
-    margin-left:10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #e6e6e6;
+  margin-left: 10px;
 }
 
 .control--radio .control__indicator {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* Hover and focus states */
 .control:hover input ~ .control__indicator,
 .control input:focus ~ .control__indicator {
-	background: #ccc;
+  background: #ccc;
 }
 
 /* Checked state */
 .control input:checked ~ .control__indicator {
-	background: #2aa1c0;
+  background: #2aa1c0;
 }
 
 /* Hover state whilst checked */
 .control:hover input:not([disabled]):checked ~ .control__indicator,
 .control input:checked:focus ~ .control__indicator {
-	background: #0e647d;
+  background: #0e647d;
 }
 
 /* Disabled state */
 .control input:disabled ~ .control__indicator {
-	pointer-events: none;
-	opacity: .6;
-	background: #e6e6e6;
+  pointer-events: none;
+  opacity: 0.6;
+  background: #e6e6e6;
 }
 
 /* Check mark */
 .control__indicator:after {
-	position: absolute;
-	display: none;
-	content: '';
+  position: absolute;
+  display: none;
+  content: "";
 }
 
 /* Show check mark */
 .control input:checked ~ .control__indicator:after {
-	display: block;
+  display: block;
 }
 
 /* Checkbox tick */
 .control--checkbox .control__indicator:after {
-	top: 4px;
-	left: 8px;
-	width: 3px;
-	height: 8px;
-	transform: rotate(45deg);
-	border: solid #fff;
-	border-width: 0 2px 2px 0;
+  top: 4px;
+  left: 8px;
+  width: 3px;
+  height: 8px;
+  transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
 }
 
 /* Disabled tick colour */
 .control--checkbox input:disabled ~ .control__indicator:after {
-	border-color: #7b7b7b;
+  border-color: #7b7b7b;
 }
 
 /* Radio button inner circle */
 .control--radio .control__indicator:after {
-	top: 7px;
-	left: 7px;
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background: #fff;
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
 }
 
 /* Disabled circle colour */
 .control--radio input:disabled ~ .control__indicator:after {
-	background: #7b7b7b;
+  background: #7b7b7b;
+}
+
+
+/* TEXT AREA */
+
+.article-textarea{
+    width:100%;
+    height:350px;
+    padding:15px;
+    font-weight:500;
+    border:none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
