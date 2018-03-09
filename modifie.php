@@ -38,4 +38,4 @@ catch (Exception $e)
 
 $modifications->closeCursor();
 
-header('Location: dashboard.php');
+header('Location: blogadmin.php');

@@ -18,4 +18,4 @@ $supprimeligne -> execute(array($iddelete));
 
 $supprimeligne->closeCursor();
 
-header('Location: dashboard.php');
+header('Location: blogadmin.php');

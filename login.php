@@ -49,7 +49,7 @@ else
         $_SESSION['pseudo'] = $login;
         echo 'Vous êtes connecté ' . $login . ' !';
         //echo 'Vous êtes connecté!' . $login . '<br> session id: ' . $_SESSION['id'] . '<br> pseudo' .$_SESSION['pseudo'] ;
-        header('Location: dashboard.php');
+        header('Location: blogadmin.php');
     }
     else {
         echo 'Mauvais mot de passe !';

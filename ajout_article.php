@@ -28,6 +28,6 @@ if (empty($_POST['titre']) && empty($_POST['categorie']) && empty($_POST['conten
     'contenu' => $contenu
   ));
 
-  header('Location: dashboard.php');
+  header('Location: blogadmin.php');
 }
  ?>
