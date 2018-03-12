@@ -42,7 +42,7 @@
             die('Erreur : ' . $e->getMessage());
           }
 
-          $req = $bdd->query('SELECT auteur, titre, catégorie, contenu,
+          $req = $bdd->query('SELECT auteur, titre, contenu,
             DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
              FROM articles
              ORDER BY date_article DESC

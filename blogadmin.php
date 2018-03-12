@@ -75,6 +75,9 @@
         </div>
 
         <?php
+            $req1 = $bdd->query('SELECT id_article, id_categorie
+               FROM articles_has_categories');
+
 
             $req = $bdd->query('SELECT id_article, auteur, titre, contenu,
               DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr

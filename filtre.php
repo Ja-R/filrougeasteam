@@ -34,7 +34,8 @@
                         categories AS cat
                         WHERE mid.id_categorie = cat.id_categorie
                         AND art.id_article = mid.id_article
-                        AND cat.id_categorie = '.$id_cat.'');
+                        AND cat.id_categorie = '.$id_cat.'
+                        ORDER BY date_article DESC');
    $req->execute();
 
 ?>
