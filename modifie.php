@@ -20,16 +20,15 @@ catch (Exception $e)
 
 
   $titremodif = htmlspecialchars($_POST['modificationtitre']);
-  $categoriemodif = htmlspecialchars($_POST['modificationcategorie']);
+  // $categoriemodif = htmlspecialchars($_POST['modificationcategorie']);
   $contenumodif = htmlspecialchars($_POST['modificationcontenu']);
 
-  $modifications = $bdd->prepare('UPDATE articles SET titre = :titre, catégorie = :categorie, contenu = :contenu, date_article = NOW()
+  $modifications = $bdd->prepare('UPDATE articles SET titre = :titre, contenu = :contenu, date_article = NOW()
     WHERE id_article = :identif');
 
   // ajouter input pour les modifs
   $modifications->execute(array(
     'titre' => $titremodif,
-    'categorie' => $categoriemodif,
     'contenu' => $contenumodif,
     'identif' => $idmodif
   ));

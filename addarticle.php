@@ -61,7 +61,7 @@ catch (Exception $e)
                       ?>
 
                           <label class="control control--checkbox"><?= $all_categories['name_categorie']; ?>
-                              <input name="cat[]" type="checkbox"/>
+                              <input name="cat[]" type="checkbox" value="<?= $all_categories['id_categorie']; ?>"/>
                               <div class="control__indicator"></div>
                           </label>
 

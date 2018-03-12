@@ -18,5 +18,5 @@ $supprimecat -> execute(array($idcat));
 
 $supprimecat->closeCursor();
 
-echo 'categorie supprime' . $idcat;
-// header('Location: addcat.php');
+// echo 'categorie supprime' . $idcat;
+header('Location: addcat.php');

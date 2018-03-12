@@ -13,7 +13,7 @@ catch (Exception $e)
   die('Erreur : ' . $e->getMessage());
 }
 
-$req = $bdd->prepare('SELECT id_article, titre, catégorie, contenu,
+$req = $bdd->prepare('SELECT id_article, titre, contenu,
   DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
    FROM articles
    WHERE id_article= ?');
@@ -22,7 +22,7 @@ $req = $bdd->prepare('SELECT id_article, titre, catégorie, contenu,
    while ($donnees = $req->fetch())
    {
      $updatetitre = $donnees['titre'];
-     $updatecategorie = $donnees['catégorie'];
+    //  $updatecategorie = $donnees['catégorie'];
      $updatecontenu = $donnees['contenu'];
      $idmodifie = $donnees['id_article'];
    }

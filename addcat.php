@@ -66,9 +66,9 @@
             </ul>
 
             <div class="add-cat">
-                <form action="post" class="add-cat-form">
+                <form action="categorie.php" method="POST" class="add-cat-form">
                     <label class="inputcat">
-                        <input type="text" class="input-add-cat" placeholder="Ajoutez une catégorie">
+                        <input type="text" name="ajout_cat" class="input-add-cat" placeholder="Ajoutez une catégorie">
                     </label>
                     <label class="submitcat">
                         <input type="submit" class="submit-cat-input" value="Ajouter">

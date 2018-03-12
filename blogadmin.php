@@ -60,7 +60,7 @@
                     while ($all_categories = $req_cat->fetch())
                     {
                   ?>
-                    
+
                     <li class="category">
                       <a href="filtre.php?idcat=<?= $all_categories['id_categorie'];?> &amp; cat=<?= $all_categories['name_categorie']; ?>"> <?= $all_categories['name_categorie']; ?> </a>
                     </li>
@@ -76,7 +76,7 @@
 
         <?php
 
-            $req = $bdd->query('SELECT id_article, auteur, titre, catégorie, contenu,
+            $req = $bdd->query('SELECT id_article, auteur, titre, contenu,
               DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
                FROM articles
                ORDER BY date_article DESC');

@@ -10,18 +10,16 @@ catch (Exception $e)
   die('Erreur : ' . $e->getMessage());
 }
 
-$req = $bdd->prepare('SELECT id_article, titre, catégorie, contenu,
-  DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
-   FROM articles
-   WHERE id_article= ?');
-  $req->execute(array($idmodif));
-
-
-if (!$_POST['cat']) {
+if(!isset($_POST['ajout_cat'])) {
   echo "Veuillez selectionner une catégorie s'il vous plait";
 } else {
-foreach ($_POST['cat'] as $value) {
+    $ajout_cat = $_POST['ajout_cat'];
+    // echo " cate ajouter " . $ajout_cat;
+}
 
-}
-}
- ?>
+$req = $bdd->prepare('INSERT INTO categories(name_categorie) VALUES (:catSub)');
+$req->execute(array(
+  'catSub' => $ajout_cat
+));
+
+header('location: addcat.php');
