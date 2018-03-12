@@ -33,6 +33,7 @@ catch (Exception $e)
             <i class="fas fa-arrow-left"></i>
             superDashboard.be
         </a>
+        <h1>Ajoutez un article</h1>
         <div class="header__btn-login">
             <i class="far fa-lg fa-user-circle"></i>
             <p class="login-name">Admin</p>

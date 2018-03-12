@@ -17,6 +17,7 @@
             <i class="fas fa-arrow-left"></i>
             superLab.be
         </a>
+        <h1>Bienvenue visiteur</h1>
         <div class="header-nav-dash">
             <a href="blogadmin.php" class="dashboard-btn">Dashboard</a>
             <div class="header__btn-login">
@@ -42,11 +43,11 @@
             die('Erreur : ' . $e->getMessage());
           }
 
-          $req = $bdd->query('SELECT auteur, titre, contenu,
+          $req = $bdd->query('SELECT id_article, auteur, titre, contenu,
             DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr
              FROM articles
              ORDER BY date_article DESC
-             LIMIT 0, 4');
+             LIMIT 0, 5');
 
           // affichage
           while ($donnees = $req->fetch())
@@ -59,9 +60,28 @@
                   </h2>
                   <div class="article-infos">
                       <ul class="category-list">
-                          <li class="category ">Project</li>
-                          <li class="category ">News</li>
+                      <?php
+                          $id_art = $donnees['id_article'];
+
+                          $getcat = $bdd->query('SELECT name_categorie
+                            FROM articles, articles_has_categories, categories
+                            WHERE articles_has_categories.id_article = articles.id_article
+                            AND articles_has_categories.id_categorie = categories.id_categorie
+                            AND articles.id_article = '.$id_art.'');
+
+                          while($datacat = $getcat->fetch())
+                          {
+                          ?>
+                              <li class="category "> <?= $datacat['name_categorie']; ?> </li>
+                              <!-- <li class="category ">News</li> -->
+
+                          <?php
+                              }
+                              $getcat->closeCursor();
+                          ?>
                       </ul>
+
+                      <!-- A METTRE DANS LE COIN INFERIEUR DROIT -->
                       <p class="article-author">Posté le
                           <time>
                             <?= $donnees['date_art_fr']; ?>

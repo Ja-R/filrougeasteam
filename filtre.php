@@ -35,7 +35,7 @@
                         WHERE mid.id_categorie = cat.id_categorie
                         AND art.id_article = mid.id_article
                         AND cat.id_categorie = '.$id_cat.'
-                        ORDER BY date_article DESC');
+                        ORDER BY art.date_article DESC');
    $req->execute();
 
 ?>
@@ -59,12 +59,13 @@
             <i class="fas fa-arrow-left"></i>
             superBlog.be
         </a>
+        <h1><?= $nom_cat; ?></h1>
         <div class="header__btn-login">
             <i class="far fa-lg fa-user-circle"></i>
             <p class="login-name">Admin</p>
         </div>
     </nav>
-    <?= $nom_cat; ?>
+
     <?php
         // affichage
         while ($art_tries = $req->fetch())
