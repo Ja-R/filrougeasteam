@@ -105,29 +105,7 @@
                   </div>
 
                     <!-- A METTRE A LA LIGNE -->
-                    <div class="">
-                      <ul class="category-list">
-                      <?php
-                          $id_art = $donnees['id_article'];
 
-                          $getcat = $bdd->query('SELECT name_categorie
-                            FROM articles, articles_has_categories, categories
-                            WHERE articles_has_categories.id_article = articles.id_article
-                            AND articles_has_categories.id_categorie = categories.id_categorie
-                            AND articles.id_article = '.$id_art.'');
-
-                          while($datacat = $getcat->fetch())
-                          {
-                          ?>
-                              <li class="category "> <?= $datacat['name_categorie']; ?> </li>
-                              <!-- <li class="category ">News</li> -->
-
-                          <?php
-                              }
-                              $getcat->closeCursor();
-                          ?>
-                      </ul>
-                    </div>
               </div>
               <div class="dashboard-article-content">
                   <h1>
@@ -146,6 +124,29 @@
                   <p>
                     <?= $donnees['contenu']; ?>
                   </p>
+              </div>
+              <div class="category-list-wrap">
+                <ul class="category-list">
+                <?php
+                    $id_art = $donnees['id_article'];
+
+                    $getcat = $bdd->query('SELECT name_categorie
+                      FROM articles, articles_has_categories, categories
+                      WHERE articles_has_categories.id_article = articles.id_article
+                      AND articles_has_categories.id_categorie = categories.id_categorie
+                      AND articles.id_article = '.$id_art.'');
+
+                    while($datacat = $getcat->fetch())
+                    {
+                    ?>
+                        <li class="category "> <?= $datacat['name_categorie']; ?> </li>
+                        <!-- <li class="category ">News</li> -->
+
+                    <?php
+                        }
+                        $getcat->closeCursor();
+                    ?>
+                </ul>
               </div>
           </article>
 

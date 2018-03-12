@@ -58,6 +58,7 @@
                   <h2 class="article-title">
                     <?= $donnees['titre']; ?>
                   </h2>
+
                   <div class="article-infos">
                       <ul class="category-list">
                       <?php
@@ -73,28 +74,31 @@
                           {
                           ?>
                               <li class="category "> <?= $datacat['name_categorie']; ?> </li>
-                              <!-- <li class="category ">News</li> -->
-
                           <?php
                               }
                               $getcat->closeCursor();
                           ?>
                       </ul>
 
-                      <!-- A METTRE DANS LE COIN INFERIEUR DROIT -->
-                      <p class="article-author">Posté le
-                          <time>
-                            <?= $donnees['date_art_fr']; ?>
-                          </time> par
-                          <span class="author-name">
-                            <?= $donnees['auteur']; ?>
-                          </span>
-                      </p>
+
+                  </div>
+                  <div class="">
+                    <p class="article-p">
+                      <?= $donnees['contenu']; ?>
+                    </p>
+
+                    <p class="article-author">Posté le
+                        <time>
+                          <?= $donnees['date_art_fr']; ?>
+                        </time> par
+                        <span class="author-name">
+                          <?= $donnees['auteur']; ?>
+                        </span>
+                    </p>
+
                   </div>
 
-                  <p class="article-p">
-                    <?= $donnees['contenu']; ?>
-                  </p>
+
               </article>
 
         <?php
