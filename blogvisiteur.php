@@ -17,7 +17,7 @@
             <i class="fas fa-arrow-left"></i>
             superLab.be
         </a>
-        <h1>Bienvenue visiteur</h1>
+        <!-- <h1>Bienvenue visiteur</h1> -->
         <div class="header-nav-dash">
             <a href="blogadmin.php" class="dashboard-btn">Dashboard</a>
             <div class="header__btn-login">

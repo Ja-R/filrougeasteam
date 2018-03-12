@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $auteur= $_SESSION['pseudo'];
   if (ISSET($_GET['idcat']) AND ISSET($_GET['cat']))
   {
     $id_cat = $_GET['idcat'];
@@ -59,10 +60,12 @@
             <i class="fas fa-arrow-left"></i>
             superBlog.be
         </a>
-        <h1><?= $nom_cat; ?></h1>
+        <h1 class="titrenav"><?= $nom_cat; ?></h1>
         <div class="header__btn-login">
             <i class="far fa-lg fa-user-circle"></i>
-            <p class="login-name">Admin</p>
+            <p class="login-name">
+              <?= $auteur;?>
+            </p>
         </div>
     </nav>
 

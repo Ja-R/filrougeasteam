@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  $auteur= $_SESSION['pseudo'];
   //connection base de donnees
   try
   {
@@ -33,10 +33,12 @@
             <i class="fas fa-arrow-left"></i>
             superBlog.be
         </a>
-        <h1>Bienvenue Admin</h1>
+        <h1 class="titrenav">Dashboard</h1>
         <div class="header__btn-login">
             <i class="far fa-lg fa-user-circle"></i>
-            <p class="login-name">Admin</p>
+            <p class="login-name">
+              <?= $auteur;?>
+            </p>
         </div>
     </nav>
     <main>
@@ -104,8 +106,6 @@
                     </a>
                   </div>
 
-                    <!-- A METTRE A LA LIGNE -->
-
               </div>
               <div class="dashboard-article-content">
                   <h1>
@@ -115,7 +115,7 @@
                       <p class="article-author">Posté le
                           <time>
                             <?= $donnees['date_art_fr']; ?>
-                          </time> par
+                          </time>  par
                           <span class="author-name">
                             <?= $donnees['auteur']; ?>
                           </span>

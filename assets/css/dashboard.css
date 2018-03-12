@@ -16,6 +16,9 @@ a{
 a:hover{
   color: teal;
 }
+.titrenav{
+  color: white;
+}
 .login-name {
   color: darkgray;
 }
