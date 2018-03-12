@@ -60,9 +60,9 @@
                     while ($all_categories = $req_cat->fetch())
                     {
                   ?>
-
+                    
                     <li class="category">
-                      <a href="filtre.php?idcat=<?= $all_categories['id_categorie'];?>"> <?= $all_categories['name_categorie']; ?> </a>
+                      <a href="filtre.php?idcat=<?= $all_categories['id_categorie'];?> &amp; cat=<?= $all_categories['name_categorie']; ?>"> <?= $all_categories['name_categorie']; ?> </a>
                     </li>
 
                   <?php

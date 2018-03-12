@@ -1,12 +1,14 @@
 <?php
   session_start();
-  if (ISSET($_GET['idcat']))
+  if (ISSET($_GET['idcat']) AND ISSET($_GET['cat']))
   {
     $id_cat = $_GET['idcat'];
+    $nom_cat = $_GET['cat'];
   }
   else
   {
     $id_cat = 1;
+    $nom_cat = "Première catégorie";
   }
 
   try
@@ -47,7 +49,7 @@
     <link rel="stylesheet" href="assets/css/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="assets/css/blog.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
-    <title>Catégorie</title>
+    <title> <?= $nom_cat; ?> </title>
 </head>
 
 <body>
@@ -61,7 +63,7 @@
             <p class="login-name">Admin</p>
         </div>
     </nav>
-
+    <?= $nom_cat; ?>
     <?php
         // affichage
         while ($art_tries = $req->fetch())
