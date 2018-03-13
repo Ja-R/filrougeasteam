@@ -32,16 +32,7 @@
     <main>
 
       <?php
-          //connection base de donnees
-          try
-          {
-            $bdd = new PDO('mysql:host=127.0.0.1;dbname=blogsuperlab;charset=utf8', 'root', 'user', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            //return $bdd;
-          }
-          catch (Exception $e)
-          {
-            die('Erreur : ' . $e->getMessage());
-          }
+          require 'database.php';
 
           $req = $bdd->query('SELECT id_article, auteur, titre, contenu,
             DATE_FORMAT(date_article, \'%d/%m/%Y à %Hh%imin%ss\') AS date_art_fr

@@ -1,16 +1,9 @@
 <?php
 session_start();
 $auteur= $_SESSION['pseudo'];
-//connection base de donnees
-try
-{
-  $bdd = new PDO('mysql:host=127.0.0.1;dbname=blogsuperlab;charset=utf8', 'root', 'user', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-  //return $bdd;
-}
-catch (Exception $e)
-{
-  die('Erreur : ' . $e->getMessage());
-}
+
+require 'database.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +72,7 @@ catch (Exception $e)
                         <textarea type="text" class="article-textarea" name="contenu"> </textarea>
                     </div>
                 </div>
-                <input type="submit" name="" class="submit-add-article">
+                <input type="submit" value="Ajoutez" name="" class="submit-add-article">
             </form>
 
         </article>

@@ -1,27 +1,14 @@
 <?php
 session_start();
 
-// if(empty($_POST['cat'])){
-//   echo "cat vide";
-//   }
-//   else{
-//     echo "<pre>";
-//     var_dump($_POST['cat']);
-//   }
 
 if (empty($_POST['titre']) && empty($_POST['categorie']) && empty($_POST['contenu']) && empty($_POST['cat']))
 {
   echo "Veuillez remplir tous les champs s'il vous plait";
 }else{
-  try
-  {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=blogsuperlab;charset=utf8', 'root', 'user', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    //return $bdd;
-  }
-  catch (Exception $e)
-  {
-    die('Erreur : ' . $e->getMessage());
-  }
+
+  require 'database.php';
+  
   $auteur= $_SESSION['pseudo'];
   $titre = htmlspecialchars($_POST['titre']);
   $categories = $_POST['cat'];
