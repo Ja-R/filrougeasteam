@@ -49,7 +49,7 @@
              ORDER BY date_article DESC
              LIMIT 0, 5');
 
-          // affichage
+          // affichage des articles
           while ($donnees = $req->fetch())
           {
           ?>
