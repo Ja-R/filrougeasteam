@@ -50,7 +50,6 @@ function getCategoriesByPost($id_art){
     WHERE articles_has_categories.id_article = articles.id_article
     AND articles_has_categories.id_categorie = categories.id_categorie
     AND articles.id_article = '.$id_art.'');
-  $getcat->fetch();
 
   return $getcat;
 }

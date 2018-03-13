@@ -79,8 +79,6 @@
                               $getcat->closeCursor();
                           ?>
                       </ul>
-
-
                   </div>
                   <div class="">
                     <p class="article-p">

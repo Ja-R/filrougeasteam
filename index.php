@@ -12,7 +12,7 @@ if (isset($_GET['action'])) {
 
 switch ($action)
 {
-    case 'getBlog':
+    case 'getBlogVisiteur':
         listeArticlesBlog();
 
       break;

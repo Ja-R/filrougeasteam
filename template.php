@@ -31,9 +31,8 @@
         <h1 class="header__title">superBlog</h1>
     </header>
     <main>
-
         <?= $content ?>
-
+    </main>
     <footer>
         <p>now get the fuck out of here.</p>
     </footer>

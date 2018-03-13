@@ -13,6 +13,24 @@ while ($donnees = $req->fetch())
           <?= $donnees['titre']; ?>
         </h2>
 
+        <div class="article-infos">
+            <ul class="category-list">
+            <?php
+                $id_art = $donnees['id_article'];
+
+                $getcat = getCategoriesByPost($id_art);
+
+                while($datacat = $getcat->fetch())
+                {
+                ?>
+                    <li class="category "> <?= $datacat['name_categorie']; ?> </li>
+                <?php
+                    }
+                    $getcat->closeCursor();
+                ?>
+            </ul>
+        </div>
+
         <div class="">
           <p class="article-p">
             <?= $donnees['contenu']; ?>

@@ -7,7 +7,9 @@
   <body>
 
 
-<a href="index.php?action=getBlog">vers le blog</a>
+<a href="index.php?action=getBlogVisiteur">vers le blog visiteur</a>
+<br>
+<a href="index.php?action=getBlogAdmin">vers le blog admin</a>
 
 
 
