@@ -8,7 +8,6 @@ Réalisation de la partie blog du one page créé lors du [Guerilla Style](https
 Collaborateurs:
 
 Front: Corentin N.
-
 Back: Jacqueline R. et Jonathan D.
 
 
