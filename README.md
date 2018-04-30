@@ -10,6 +10,3 @@ Réalisation de la partie blog du one page créé lors du [Guerilla Style](https
 Front: Corentin N.
 
 Back: Jacqueline R. et Jonathan D.
-
-
-[superLab](http://becodework.000webhostapp.com/)
