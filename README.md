@@ -5,7 +5,7 @@
 Réalisation de la partie blog du one page créé lors du [Guerilla Style](https://github.com/becodeorg/Swartz-promo-3/blob/master/Projects/filrouge.md) en mode team.
 
 
-## Collaborateurs:
+#### Collaborateurs:
 
 Front: Corentin N.
 
